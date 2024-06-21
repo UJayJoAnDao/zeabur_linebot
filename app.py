@@ -6,7 +6,7 @@ from linebot.v3.messaging import Configuration, ApiClient, MessagingApi, ReplyMe
 from linebot.v3.webhooks import MessageEvent, TextMessageContent
 
 app = Flask(__name__)
-configuration = os.getenv("Channel_Access_Token")
+configuration = Configuration(access_token=os.getenv("Channel_Access_Token"))
 handler = WebhookHandler(os.getenv("Chanel_Secret"))
 
 @app.route('/')
